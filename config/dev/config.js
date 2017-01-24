@@ -8,7 +8,7 @@ module.exports = {
   mongoDB: {
     uri: 'mongodb://'+mongoDBIp+':'+mongoDBPort+'/'+mongoDBDatabase
   },
-  dataDB: [
+  dataAnuncioDB: [
     {
       "nombre": "Bicicleta",
       "venta": true,
@@ -36,6 +36,38 @@ module.exports = {
       "precio": 50.00,
       "foto": "iphone.png",
       "tags": [ "lifestyle", "mobile"]
+    }
+  ],
+  dataUsuarioDB: [
+    {
+      nombre: 'kjme',
+      email: 'kevinccbsg@test.test',
+      clave: 'safsdfshfd'
+    },
+    {
+      nombre: 'kjme',
+      email: 'kevinccbsg@test.test',
+      clave: 'safsdfshfd'
+    },
+    {
+      nombre: 'kjme',
+      email: 'kevinccbsg@test.test',
+      clave: 'safsdfshfd'
+    },
+    {
+      nombre: 'kjme',
+      email: 'kevinccbsg@test.test',
+      clave: 'safsdfshfd'
+    },
+    {
+      nombre: 'kjme',
+      email: 'kevinccbsg@test.test',
+      clave: 'safsdfshfd'
+    },
+    {
+      nombre: 'kjme',
+      email: 'kevinccbsg@test.test',
+      clave: 'safsdfshfd'
     }
   ]
 };

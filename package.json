@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "enviroment-dev": "DEBUG=Nodepop:* NODE_ENV=dev",
     "babel": "./node_modules/.bin/babel --presets es2017 ./src/provisionData/install_db_ES2017.js -o ./install_db.js",
+    "installDB": "npm run babel && npm run enviroment-dev node install_db.js",
     "start": "npm run enviroment-dev node ./bin/www"
   },
   "repository": {
