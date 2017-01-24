@@ -1,9 +1,9 @@
 'use strict'
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
 router.get('/', (req, res) => {
-  res.send('cool');
-});
+  res.send('cool')
+})
 
-module.exports = router;
+module.exports = router

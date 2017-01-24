@@ -1,7 +1,7 @@
 
-const mongoDBIp = 'localhost';
-const mongoDBPort = 27017;
-const mongoDBDatabase = 'nodepop';
+const mongoDBIp = 'localhost'
+const mongoDBPort = 27017
+const mongoDBDatabase = 'nodepop'
 
 module.exports = {
   processPort : 3000,
@@ -70,4 +70,4 @@ module.exports = {
       clave: 'safsdfshfd'
     }
   ]
-};
+}

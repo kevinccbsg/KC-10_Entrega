@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "linter": "./node_modules/.bin/standard ./**/*.js",
     "enviroment-dev": "DEBUG=Nodepop:* NODE_ENV=dev",
     "babel": "./node_modules/.bin/babel --presets es2017 ./src/provisionData/install_db_ES2017.js -o ./install_db.js",
     "installDB": "npm run babel && npm run enviroment-dev node install_db.js",
@@ -43,6 +44,7 @@
     "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",
     "babel-preset-es2017": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0"
+    "babel-preset-stage-0": "^6.22.0",
+    "standard": "^8.6.0"
   }
 }
