@@ -3,12 +3,33 @@ const express       = require('express');
 const path          = require('path');
 const favicon       = require('serve-favicon');
 const logger        = require('morgan');
+const debug         = require('debug')('Nodepop:app');
+const config        = require('app-config');
 const pug           = require('pug');
 const cookieParser  = require('cookie-parser');
 const bodyParser    = require('body-parser');
 const apiRouter     = require('./router/api');
-const app           = express();
 
+// Express application
+const app           = express();
+// mongoose connections
+const mongoose      = require('mongoose');
+const conn          = mongoose.connection;
+mongoose.Promise = global.Promise;
+
+//mongoose handling connections
+conn.on('error', (err) => {
+  debug('Error de conexión:', err);
+});
+
+conn.once('open', () => {
+  debug('Connected to mongodb.');
+});
+
+// mongoose connect
+mongoose.connect(config.config.mongoDB.uri);
+
+// Express app middlewares
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
