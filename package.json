@@ -1,0 +1,27 @@
+{
+  "name": "nodepop-api",
+  "version": "1.0.0",
+  "description": "Api para gestión de venta de artículos de segunda mano desarrollada con node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinccbsg/KC-10_Entrega.git"
+  },
+  "keywords": [
+    "node",
+    "mongodb",
+    "keepcoding",
+    "express",
+    "mongoose",
+    "nodepop"
+  ],
+  "author": "Kevin Julián Martínez Escobar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinccbsg/KC-10_Entrega/issues"
+  },
+  "homepage": "https://github.com/kevinccbsg/KC-10_Entrega#readme"
+}
