@@ -26,6 +26,15 @@ usuarioSchema.pre('save', function (callback) {
   })
 })
 
+// Method to verify password
+usuarioSchema.methods.verifyPassword = function (password, callback) {
+  bcrypt.compare(password, this.clave, (err, isMatch) => {
+    if (err) return callback(err)
+
+    callback(null, isMatch)
+  })
+}
+
 let Usuario = mongoose.model('usuario', usuarioSchema)
 
 module.exports = Usuario

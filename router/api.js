@@ -1,8 +1,10 @@
 'use strict'
 const express = require('express')
 const router = express.Router()
-const apiController = require('../controllers/apiController')
+const usuarioController = require('../controllers/usuarioController')
+const anuncioController = require('../controllers/anuncioController')
 
-router.get('/', apiController.getItemsList)
+router.get('/', anuncioController.anunciosList)
+router.post('/usuarios/authenticate', usuarioController.authenticate)
 
 module.exports = router
