@@ -40,34 +40,24 @@ module.exports = {
   ],
   dataUsuarioDB: [
     {
-      nombre: 'kjme',
-      email: 'kevinccbsg@test.test',
-      clave: 'safsdfshfd'
+      nombre: 'nodeadmin',
+      email: 'nodeadmin@test.test',
+      clave: 'nodeadmissuper'
     },
     {
-      nombre: 'kjme',
+      nombre: 'kevinccbsg',
       email: 'kevinccbsg@test.test',
-      clave: 'safsdfshfd'
+      clave: 'supersegura'
     },
     {
-      nombre: 'kjme',
-      email: 'kevinccbsg@test.test',
-      clave: 'safsdfshfd'
+      nombre: 'github',
+      email: 'github@test.test',
+      clave: 'gatopulpo'
     },
     {
-      nombre: 'kjme',
-      email: 'kevinccbsg@test.test',
-      clave: 'safsdfshfd'
-    },
-    {
-      nombre: 'kjme',
-      email: 'kevinccbsg@test.test',
-      clave: 'safsdfshfd'
-    },
-    {
-      nombre: 'kjme',
-      email: 'kevinccbsg@test.test',
-      clave: 'safsdfshfd'
+      nombre: 'keepcoding',
+      email: 'keepcoding@test.test',
+      clave: 'keepcoding1234'
     }
   ]
 }
