@@ -8,6 +8,9 @@ module.exports = {
   mongoDB: {
     uri: 'mongodb://'+mongoDBIp+':'+mongoDBPort+'/'+mongoDBDatabase
   },
+  optsAuth: {
+    secretOrKey: 'nodepopissecretdude'
+  },
   dataAnuncioDB: [
     {
       "nombre": "Bicicleta",
