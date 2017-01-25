@@ -2,6 +2,8 @@
 const debug = require('debug')('Nodepop:controllers:usuarioController')
 const Usuario = require('../models/Usuario')
 const helper = require('../helpers/responseHelper')
+const jwt = require('jsonwebtoken')
+const config = require('app-config')
 
 module.exports.authenticate = (req, res) => {
   debug('authenticate')
@@ -13,9 +15,10 @@ module.exports.authenticate = (req, res) => {
 
     user.verifyPassword(pwd, (err, isMatch) => {
       if (err) return helper.response(res, false, 'Internal Server Error', 500)
-      if (isMatch) return helper.response(res, true, 'user exists', 200)
-      
-      helper.response(res, true, 'Forbidden', 403)
+      if (!isMatch) return helper.response(res, true, 'Forbidden', 403)
+
+      let token = jwt.sign(user, config.config.optsAuth.secretOrKey, { expiresIn: 10000 })
+      helper.response(res, true, { token: `JWT ${token}` }, 200)
     })
   })
 }

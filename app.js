@@ -7,6 +7,7 @@ const pug           = require('pug')
 const cookieParser  = require('cookie-parser')
 const bodyParser    = require('body-parser')
 const apiRouter     = require('./router/api')
+const passport      = require('passport')
 // Express application
 const app           = express()
 
@@ -25,6 +26,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(passport.initialize());
 
 app.use('/apiv1', apiRouter)
 
