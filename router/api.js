@@ -7,5 +7,6 @@ const authHelper = require('../helpers/authHelper')
 
 router.get('/anuncios', authHelper.isAuthenticated, anuncioController.anunciosList)
 router.post('/usuarios/authenticate', usuarioController.authenticate)
+router.post('/usuarios/register', usuarioController.register)
 
 module.exports = router
