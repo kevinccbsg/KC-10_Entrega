@@ -13,32 +13,39 @@ module.exports = {
   },
   dataAnuncioDB: [
     {
-      "nombre": "Bicicleta",
-      "venta": true,
-      "precio": 230.15,
-      "foto": "bici.jpg",
-      "tags": [ "lifestyle", "motor"]
+      nombre: "Chair",
+      venta: true,
+      precio: 10.15,
+      foto: "chair.jpg",
+      tags: [ "home", "Decoration"]
     },
     {
-      "nombre": "iPhone 3GS",
-      "venta": false,
-      "precio": 50.00,
-      "foto": "iphone.png",
-      "tags": [ "lifestyle", "mobile"]
+      nombre: "Drone",
+      venta: true,
+      precio: 500.00,
+      foto: "drone.jpg",
+      tags: [ "Entretaiment", "games", "Remote control"]
     },
     {
-      "nombre": "iPhone 3GS",
-      "venta": false,
-      "precio": 50.00,
-      "foto": "iphone.png",
-      "tags": [ "lifestyle", "mobile"]
+      nombre: "Playstation 4",
+      venta: false,
+      precio: 200.00,
+      foto: "play4.png",
+      tags: [ "home", "Entretaiment", "games"]
     },
     {
-      "nombre": "iPhone 3GS",
-      "venta": false,
-      "precio": 50.00,
-      "foto": "iphone.png",
-      "tags": [ "lifestyle", "mobile"]
+      nombre: "Tablet",
+      venta: true,
+      precio: 550.00,
+      foto: "table.jpg",
+      tags: [ "lifestyle", "mobile"]
+    },
+    {
+      nombre: "xbox 360",
+      venta: true,
+      precio: 360.00,
+      foto: "xbox360.jpg",
+      tags: [ "home", "Entretaiment", "games"]
     }
   ],
   dataUsuarioDB: [
