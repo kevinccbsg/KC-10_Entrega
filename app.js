@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const apiRouter = require('./router/api')
 const passport = require('passport')
+const i18n = require('./utils/i18n');
 // Express application
 const app = express()
 
@@ -18,7 +19,7 @@ require('./helpers/connectionHelper')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
-
+app.use(i18n)
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(logger('dev'))

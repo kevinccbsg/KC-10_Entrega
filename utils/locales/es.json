@@ -1,0 +1,5 @@
+{
+  "Error 404": "Anuncio no encontrado",
+  "Error 500": "Error interno de servidor",
+  "Error 400": "Petición Incorrecta"
+}

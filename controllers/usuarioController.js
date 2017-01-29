@@ -10,11 +10,11 @@ module.exports.authenticate = (req, res) => {
   let email = req.body.email
   let pwd = req.body.password
   Usuario.findOne({ email: email }, (err, user) => {
-    if (err) return helper.response(res, false, 'Internal Server Error', 500)
+    if (err) return helper.response(res, false, res.__('Error 500'), 500)
     if (!user) return helper.response(res, false, 'Not Found', 404)
 
     user.verifyPassword(pwd, (err, isMatch) => {
-      if (err) return helper.response(res, false, 'Internal Server Error', 500)
+      if (err) return helper.response(res, false, res.__('Error 500'), 500)
       if (!isMatch) return helper.response(res, true, 'Forbidden', 403)
 
       let token = jwt.sign(user, config.config.optsAuth.secretOrKey, { expiresIn: 10000 })
@@ -29,7 +29,7 @@ module.exports.register = (req, res) => {
   let email = req.body.email
   let pwd = req.body.password
   if (name === undefined || email === undefined || pwd === undefined) {
-    return helper.response(res, false, 'Bad Request', 400)
+    return helper.response(res, false, res.__('Error 400'), 400)
   }
 
   let jsonUsuario = {
@@ -39,7 +39,7 @@ module.exports.register = (req, res) => {
   }
   let usuario = new Usuario(jsonUsuario)
   usuario.save(err => {
-    if (err) return helper.response(res, false, 'Internal Server Error', 500)
+    if (err) return helper.response(res, false, res.__('Error 500'), 500)
 
     helper.response(res, true, 'User register', 200)
   })

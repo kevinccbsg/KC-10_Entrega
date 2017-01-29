@@ -24,12 +24,14 @@ module.exports.anunciosList = (req, res) => {
   }
   if (precioStart === '') {
     let numberPE = Number(precioEnd)
-    if (isNaN(numberPE)) return helper.response(res, false, 'Bad Request. Precio must be Number data', 404)
+    debug(res.__('Error 400'))
+    if (isNaN(numberPE)) return helper.response(res, false, res.__('Error 400'), 404)
 
     filter.precio = { '$lte': numberPE }
   } else if (precioEnd === '') {
     let numberPS = Number(precioStart)
-    if (isNaN(numberPS)) return helper.response(res, false, 'Bad Request. Precio must be Number data', 404)
+    debug(res.__('Error 400'))
+    if (isNaN(numberPS)) return helper.response(res, false, res.__('Error 400'), 404)
 
     filter.precio = { '$gte': numberPS }
   } else {
@@ -38,7 +40,8 @@ module.exports.anunciosList = (req, res) => {
     let numberPS = Number(precioStart)
     debug(numberPS)
     debug(isNaN(numberPS))
-    if (isNaN(numberPS) || isNaN(numberPE)) return helper.response(res, false, 'Bad Request. Precio must be Number data', 404)
+    debug(res.__('Error 400'))
+    if (isNaN(numberPS) || isNaN(numberPE)) return helper.response(res, false, res.__('Error 400'), 404)
 
     filter.precio = { '$lte': numberPE, '$gte': numberPS }
   }
@@ -47,7 +50,8 @@ module.exports.anunciosList = (req, res) => {
   let start = Number(queryParams.start) || 0
   let limit = Number(queryParams.limit) || 5
   if (isNaN(start) || isNaN(limit)) {
-    return helper.response(res, false, 'Bad Request. Start and Limit must be Number data', 404)
+    debug(res.__('Error 400'))
+    return helper.response(res, false, res.__('Error 400'), 404)
   }
   let sort = queryParams.sort
   debug(filter)
@@ -55,11 +59,11 @@ module.exports.anunciosList = (req, res) => {
   debug(start)
   debug(sort)
   Anuncio.count(filter, (err, count) => {
-    if (err) return helper.response(res, false, 'Iternal Server Error', 500)
+    if (err) return helper.response(res, false, res.__('Error 500'), 500)
     Anuncio.list(filter, limit, start, sort, (err, anuncios) => {
-      if (err) return helper.response(res, false, 'Iternal Server Error', 500)
+      if (err) return helper.response(res, false, res.__('Error 500'), 500)
 
-      if (anuncios.length === 0) return helper.response(res, false, 'Not Found any items', 404)
+      if (anuncios.length === 0) return helper.response(res, false, res.__('Error 404'), 404)
 
       let formated = { page: start, total: count, perPage: limit, data: anuncios }
       helper.response(res, true, formated, 200)

@@ -1,0 +1,5 @@
+{
+  "Error 404": "Anuncio Not Found",
+  "Error 500": "Internal Server Error",
+  "Error 400": "Bad Request"
+}
