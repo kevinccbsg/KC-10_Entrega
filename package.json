@@ -33,6 +33,7 @@
     "app-config": "^1.0.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.16.0",
+    "cluster": "^0.7.7",
     "cookie-parser": "^1.4.3",
     "debug": "^2.6.0",
     "express": "^4.14.0",
