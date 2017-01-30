@@ -35,3 +35,7 @@ POST /usuarios/authenticate
 
 POST /usuarios/register
 ```
+
+## Configuration
+
+La configuración se realizará en el directorío config/dev, en el se encuantran los parámetros de configuración de base de datos servidor etc.
